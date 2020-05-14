@@ -1,0 +1,26 @@
+{
+  "name": "greymon",
+  "version": "1.0.0",
+  "description": "tiny pluggable frontend architecture",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keisei77/greymon.git"
+  },
+  "author": "Keisei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keisei77/greymon/issues"
+  },
+  "homepage": "https://github.com/keisei77/greymon#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^4.1.1",
+    "rollup": "^2.10.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.2"
+  }
+}
