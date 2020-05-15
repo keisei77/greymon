@@ -2,10 +2,14 @@
   "name": "greymon",
   "version": "1.0.0",
   "description": "tiny pluggable frontend architecture",
-  "main": "index.js",
   "scripts": {
-    "build": "rollup --config"
+    "build": "rimraf dist && rollup -c",
+    "dev": "rimraf dist && rollup -c -w",
+    "pretest": "npm run build"
   },
+  "main": "dist/greymon.cjs.js",
+  "module": "dist/greymon.esm.js",
+  "browser": "dist/greymon.umd.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/keisei77/greymon.git"
@@ -16,11 +20,16 @@
     "url": "https://github.com/keisei77/greymon/issues"
   },
   "homepage": "https://github.com/keisei77/greymon#readme",
-  "dependencies": {},
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
     "@rollup/plugin-typescript": "^4.1.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.10.0",
     "tslib": "^2.0.0",
     "typescript": "^3.9.2"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
