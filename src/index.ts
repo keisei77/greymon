@@ -1,5 +1,11 @@
-function test(): void {
-  console.log(new Date());
+interface Greymon {
+  plugins: any[];
+  host: any[];
 }
 
-test();
+const greymon: Greymon = {
+  plugins: [],
+  host: [],
+};
+
+export default greymon;
