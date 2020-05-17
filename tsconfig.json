@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
+    "declaration": true,
     "noImplicitAny": true,
     "rootDir": "src"
   }
