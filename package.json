@@ -22,7 +22,6 @@
   "homepage": "https://github.com/keisei77/greymon#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
-    "@rollup/plugin-node-resolve": "^7.1.3",
     "rimraf": "^3.0.2",
     "rollup": "^2.10.0",
     "rollup-plugin-typescript2": "^0.27.1",
