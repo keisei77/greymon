@@ -1,3 +1,11 @@
-const Legs = {};
+export interface LegsType {
+  component: any;
+  actions: (() => void)[];
+}
 
-export default Legs;
+const legs: LegsType = {
+  component: null,
+  actions: [],
+};
+
+export default legs;

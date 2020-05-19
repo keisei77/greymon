@@ -1,3 +1,11 @@
-const Foots = {};
+export interface FootsType {
+  component: any;
+  actions: (() => void)[];
+}
 
-export default Foots;
+const foots: FootsType = {
+  component: null,
+  actions: [],
+};
+
+export default foots;

@@ -1,11 +1,11 @@
-import Perfect, { PerfectType } from './core';
+import perfect, { PerfectType } from './core';
 
 interface Greymon {
-  Perfect: PerfectType;
+  perfect: PerfectType;
 }
 
 const greymon: Greymon = {
-  Perfect,
+  perfect,
 };
 
 export default greymon;

@@ -1,3 +1,11 @@
-const Head = {};
+export interface HeadType {
+  component: any;
+  actions: (() => void)[];
+}
 
-export default Head;
+const head: HeadType = {
+  component: null,
+  actions: [],
+};
+
+export default head;

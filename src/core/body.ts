@@ -1,3 +1,11 @@
-const Body = {};
+export interface BodyType {
+  component: any;
+  actions: (() => void)[];
+}
 
-export default Body;
+const body: BodyType = {
+  component: null,
+  actions: [],
+};
+
+export default body;

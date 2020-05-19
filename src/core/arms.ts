@@ -1,3 +1,11 @@
-const Arms = {};
+export interface ArmsType {
+  component: any;
+  actions: (() => void)[];
+}
 
-export default Arms;
+const arms: ArmsType = {
+  component: null,
+  actions: [],
+};
+
+export default arms;

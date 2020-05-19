@@ -1,17 +1,23 @@
-import Head from './head';
-import Body from './body';
-import Arms from './arms';
-import Legs from './legs';
-import Foots from './foots';
+import head, { HeadType } from './head';
+import body, { BodyType } from './body';
+import arms, { ArmsType } from './arms';
+import legs, { LegsType } from './legs';
+import foots, { FootsType } from './foots';
 
-export type PerfectType = typeof Perfect;
+export interface PerfectType {
+  head: HeadType;
+  body: BodyType;
+  arms: ArmsType;
+  legs: LegsType;
+  foots: FootsType;
+}
 
-const Perfect = {
-  Head,
-  Body,
-  Arms,
-  Legs,
-  Foots,
+const perfect: PerfectType = {
+  head,
+  body,
+  arms,
+  legs,
+  foots,
 };
 
-export default Perfect;
+export default perfect;
