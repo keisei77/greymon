@@ -1,5 +1,5 @@
 {
-  "name": "greymon",
+  "name": "@keisei77/greymon",
   "version": "1.0.0",
   "description": "tiny pluggable frontend architecture",
   "scripts": {
@@ -10,6 +10,9 @@
   "main": "dist/greymon.cjs.js",
   "module": "dist/greymon.esm.js",
   "browser": "dist/greymon.umd.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/keisei77/greymon.git"
