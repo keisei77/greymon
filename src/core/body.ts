@@ -1,11 +1,13 @@
+import { constructorFactory } from '../utils/constructorFactory';
+
 export interface BodyType {
   component: any;
   actions: (() => void)[];
 }
 
-const body: BodyType = {
-  component: null,
-  actions: [],
-};
+class body {
+  component: any = null;
+  actions: (() => void)[] = [];
+}
 
-export default body;
+export default constructorFactory(body);

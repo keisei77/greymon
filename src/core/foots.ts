@@ -1,11 +1,13 @@
+import { constructorFactory } from '../utils/constructorFactory';
+
 export interface FootsType {
   component: any;
   actions: (() => void)[];
 }
 
-const foots: FootsType = {
-  component: null,
-  actions: [],
-};
+class foots {
+  component: any = null;
+  actions: (() => void)[] = [];
+}
 
-export default foots;
+export default constructorFactory(foots);

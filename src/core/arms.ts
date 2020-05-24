@@ -1,11 +1,13 @@
+import { constructorFactory } from '../utils/constructorFactory';
+
 export interface ArmsType {
   component: any;
   actions: (() => void)[];
 }
 
-const arms: ArmsType = {
-  component: null,
-  actions: [],
-};
+class arms {
+  component: any = null;
+  actions: (() => void)[] = [];
+}
 
-export default arms;
+export default constructorFactory(arms);
