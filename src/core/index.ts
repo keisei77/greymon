@@ -2,14 +2,14 @@ import head, { HeadType } from './head';
 import body, { BodyType } from './body';
 import arms, { ArmsType } from './arms';
 import legs, { LegsType } from './legs';
-import foots, { FootsType } from './foots';
+import feet, { FeetType } from './feet';
 
 export interface PerfectType {
   head: HeadType;
   body: BodyType;
   arms: ArmsType;
   legs: LegsType;
-  foots: FootsType;
+  feet: FeetType;
 }
 
 const perfect: PerfectType = {
@@ -17,7 +17,7 @@ const perfect: PerfectType = {
   body,
   arms,
   legs,
-  foots,
+  feet,
 };
 
 export default perfect;
