@@ -5,11 +5,11 @@ import legs, { LegsType } from './legs';
 import feet, { FeetType } from './feet';
 
 export interface PerfectType {
-  head: HeadType;
-  body: BodyType;
-  arms: ArmsType;
-  legs: LegsType;
-  feet: FeetType;
+  head: (args: any) => HeadType;
+  body: (args: any) => BodyType;
+  arms: (args: any) => ArmsType;
+  legs: (args: any) => LegsType;
+  feet: (args: any) => FeetType;
 }
 
 const perfect: PerfectType = {

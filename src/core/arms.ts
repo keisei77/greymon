@@ -8,6 +8,8 @@ export interface ArmsType {
 class arms {
   component: any = null;
   actions: (() => void)[] = [];
+
+  constructor() {}
 }
 
 export default constructorFactory(arms);

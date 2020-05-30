@@ -1,5 +1,5 @@
-type Constructor = new () => any;
+type Constructor = new (args: any) => any;
 
-export const constructorFactory = (Cls: Constructor) => {
-  return new Cls();
+export const constructorFactory = (Cls: Constructor) => (args: any) => {
+  return new Cls(args);
 };
