@@ -4,12 +4,24 @@ tiny pluggable frontend architecture
 
 ---
 
-------------------- head -------------------
+## Initial blueprint
 
-------------------- body -------------------
+greymon is composed of 5 parts:
 
-------------------- arms -------------------
+- head has facial features and can nod or shake
 
-------------------- legs -------------------
+- body
 
-------------------- feet -------------------
+- arms have hands and can raise or wave
+
+- legs can jump or run
+
+- feet
+
+All those parts need to init with descriptions, and those actions can defined by yourself.
+
+![blueprint](blueprint.png)
+
+## TODO: How to use
+
+## TODO: How it works
