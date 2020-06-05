@@ -1,15 +1,15 @@
-import head, { HeadType } from './head';
-import body, { BodyType } from './body';
-import arms, { ArmsType } from './arms';
-import legs, { LegsType } from './legs';
-import feet, { FeetType } from './feet';
-
+import head from './head';
+import body from './body';
+import arms from './arms';
+import legs from './legs';
+import feet from './feet';
+import { BaseType } from './base';
 export interface PerfectType {
-  head: (args: any) => HeadType;
-  body: (args: any) => BodyType;
-  arms: (args: any) => ArmsType;
-  legs: (args: any) => LegsType;
-  feet: (args: any) => FeetType;
+  head: (args: any) => BaseType;
+  body: (args: any) => BaseType;
+  arms: (args: any) => BaseType;
+  legs: (args: any) => BaseType;
+  feet: (args: any) => BaseType;
 }
 
 const perfect: PerfectType = {

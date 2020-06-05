@@ -1,13 +1,6 @@
 import { constructorFactory } from '../utils/constructorFactory';
+import Base from './base';
 
-export interface LegsType {
-  component: any;
-  actions: (() => void)[];
-}
+class Legs extends Base {}
 
-class legs {
-  component: any = null;
-  actions: (() => void)[] = [];
-}
-
-export default constructorFactory(legs);
+export default constructorFactory(Legs);
