@@ -12,12 +12,22 @@ export interface PerfectType {
   feet: (args: any) => BaseType;
 }
 
-const perfect: PerfectType = {
-  head,
-  body,
-  arms,
-  legs,
-  feet,
-};
+export default class Perfect {
+  private assembly: any = null;
+  constructor() {
+    this.assemble({ head, body, arms, legs, feet });
+  }
 
-export default perfect;
+  assemble = (perfect: PerfectType) => {
+    this.assembly = { perfect };
+  };
+
+  /**
+   *
+   * @param actions: string[]
+   *
+   * perfect.act(['nod', 'run']);
+   */
+
+  act = (actions: string[]) => {};
+}
