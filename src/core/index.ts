@@ -5,21 +5,45 @@ import legs from './legs';
 import feet from './feet';
 import { BaseType } from './base';
 export interface PerfectType {
-  head: (args: any) => BaseType;
-  body: (args: any) => BaseType;
-  arms: (args: any) => BaseType;
-  legs: (args: any) => BaseType;
-  feet: (args: any) => BaseType;
+  head: BaseType;
+  body: BaseType;
+  arms: BaseType;
+  legs: BaseType;
+  feet: BaseType;
+}
+
+type PartType = 'head' | 'body' | 'arms' | 'legs' | 'feet';
+
+interface RegisteredActions {
+  [key: string]: PartType;
 }
 
 export default class Perfect {
   private assembly: any = null;
-  constructor() {
-    this.assemble({ head, body, arms, legs, feet });
+  private registeredActions: RegisteredActions = null;
+  constructor(perfect: PerfectType) {
+    this.assembly = perfect;
   }
 
-  assemble = (perfect: PerfectType) => {
-    this.assembly = { perfect };
+  register = (assembly: PerfectType) => {
+    this.registeredActions = Object.entries(assembly)
+      .map(([part, registration]: [PartType, BaseType]) => {
+        return registration.actionList.map(
+          (actionName: string): RegisteredActions => ({
+            [actionName]: part,
+          })
+        );
+      })
+      .reduce((prev: RegisteredActions, acc) => {
+        const parsedAcc = acc.reduce((p, a) => {
+          const actionName = Object.keys(a)[0];
+          p[actionName] = a[actionName];
+          return p;
+        }, {});
+        prev = { ...prev, ...parsedAcc };
+        return prev;
+      }, {});
+    return this;
   };
 
   /**
