@@ -1,7 +1,7 @@
 export interface BaseType {
   descriptor: any;
   actions: (() => void)[];
-  actionList: string[];
+  actionList?: string[];
 }
 
 export default class Base {

@@ -34,12 +34,15 @@ export default class Perfect {
           })
         );
       })
-      .reduce((prev: RegisteredActions, acc) => {
-        const parsedAcc = acc.reduce((p, a) => {
-          const actionName = Object.keys(a)[0];
-          p[actionName] = a[actionName];
-          return p;
-        }, {});
+      .reduce((prev: RegisteredActions, acc: RegisteredActions[]) => {
+        const parsedAcc = acc.reduce(
+          (p: RegisteredActions, a: RegisteredActions) => {
+            const actionName = Object.keys(a)[0];
+            p[actionName] = a[actionName];
+            return p;
+          },
+          {}
+        );
         prev = { ...prev, ...parsedAcc };
         return prev;
       }, {});
