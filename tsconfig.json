@@ -4,5 +4,6 @@
     "noImplicitAny": true,
     "rootDir": "src",
     "target": "es2018"
-  }
+  },
+  "exclude": ["node_modules", "lib", "__test__"]
 }

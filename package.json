@@ -5,6 +5,7 @@
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "dev": "rimraf dist && rollup -c -w",
+    "test": "jest",
     "pretest": "npm run build"
   },
   "main": "dist/greymon.cjs.js",
@@ -24,7 +25,10 @@
   },
   "homepage": "https://github.com/keisei77/greymon#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
     "@rollup/plugin-commonjs": "^11.1.0",
+    "jest": "^26.0.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.10.0",
     "rollup-plugin-typescript2": "^0.27.1",
