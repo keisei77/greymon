@@ -23,6 +23,7 @@ export default class Perfect {
   private registeredActions: RegisteredActions = null;
   constructor(perfect: PerfectType) {
     this.assembly = perfect;
+    this.register(this.assembly);
   }
 
   register = (assembly: PerfectType) => {
@@ -57,4 +58,8 @@ export default class Perfect {
    */
 
   act = (actions: string[]) => {};
+
+  getActions = () => {
+    return this.registeredActions;
+  };
 }

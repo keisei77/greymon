@@ -49,6 +49,18 @@ const combination = {
   }),
 };
 
+const parsedActions = {
+  nod: 'head',
+  shake: 'head',
+  wave: 'arms',
+  raise: 'arms',
+  jump: 'legs',
+  run: 'legs',
+};
+
 const greymon = new Perfect(combination);
 
-console.log(greymon);
+test('should get correct registered actions', () => {
+  const actions = greymon.getActions();
+  expect(actions).toEqual(parsedActions);
+});
