@@ -49,18 +49,11 @@ const combination = {
   }),
 };
 
-const parsedActions = {
-  nod: 'head',
-  shake: 'head',
-  wave: 'arms',
-  raise: 'arms',
-  jump: 'legs',
-  run: 'legs',
-};
-
 const greymon = new Perfect(combination);
 
 test('should get correct registered actions', () => {
-  const actions = greymon.getActions();
-  expect(actions).toEqual(parsedActions);
+  const spy = jest.spyOn(console, 'log');
+  greymon.act(['run', 'wave']);
+
+  expect(spy).toHaveBeenCalled();
 });

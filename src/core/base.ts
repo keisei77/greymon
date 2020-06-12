@@ -1,17 +1,18 @@
+import Perfect from './index';
+
+export type Action = (arg: Perfect) => void;
+
 export interface BaseType {
   descriptor: any;
-  actions: (() => void)[];
-  actionList?: string[];
+  actions: Action[];
 }
 
 export default class Base {
   descriptor: any = null;
-  actions: (() => void)[] = [];
-  private actionList: string[] = [];
+  actions: Action[] = [];
 
   constructor({ descriptor, actions }: BaseType) {
     this.descriptor = descriptor;
     this.actions = actions.map((action) => action.bind(this));
-    this.actionList = actions.map((action) => action.name);
   }
 }

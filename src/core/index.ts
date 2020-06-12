@@ -1,9 +1,4 @@
-import head from './head';
-import body from './body';
-import arms from './arms';
-import legs from './legs';
-import feet from './feet';
-import { BaseType } from './base';
+import { BaseType, Action } from './base';
 export interface PerfectType {
   head: BaseType;
   body: BaseType;
@@ -15,7 +10,7 @@ export interface PerfectType {
 type PartType = 'head' | 'body' | 'arms' | 'legs' | 'feet';
 
 interface RegisteredActions {
-  [key: string]: PartType;
+  [key: string]: Action;
 }
 
 export default class Perfect {
@@ -29,9 +24,9 @@ export default class Perfect {
   register = (assembly: PerfectType) => {
     this.registeredActions = Object.entries(assembly)
       .map(([part, registration]: [PartType, BaseType]) => {
-        return registration.actionList.map(
-          (actionName: string): RegisteredActions => ({
-            [actionName]: part,
+        return registration.actions.map(
+          (action: Action): RegisteredActions => ({
+            [action.name.slice(6)]: action,
           })
         );
       })
@@ -57,7 +52,12 @@ export default class Perfect {
    * perfect.act(['nod', 'run']);
    */
 
-  act = (actions: string[]) => {};
+  act = (actions: string[]) => {
+    actions.forEach((action) => {
+      this.registeredActions[action](this);
+    });
+    return this;
+  };
 
   getActions = () => {
     return this.registeredActions;
