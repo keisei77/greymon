@@ -26,6 +26,7 @@ export default class Perfect {
       .map(([part, registration]: [PartType, BaseType]) => {
         return registration.actions.map(
           (action: Action): RegisteredActions => ({
+            // action.name => 'bound run'
             [action.name.slice(6)]: action,
           })
         );
