@@ -1,11 +1,11 @@
-type PlayGroundType = '2d' | '3d';
+type PlayGroundType = 'webgl' | 'webgl2';
 
 interface PlayGroundOptions {
   type: PlayGroundType;
 }
 
 export default class playGround {
-  private type: PlayGroundType = '2d';
+  private type: PlayGroundType = 'webgl';
 
   constructor(mountEl: HTMLElement, options: PlayGroundOptions) {
     const canvasEl = document.createElement('canvas');
