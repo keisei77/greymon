@@ -9,7 +9,10 @@ export default class playGround {
 
   constructor(mountEl: HTMLElement, options: PlayGroundOptions) {
     const canvasEl = document.createElement('canvas');
-    const canvas = canvasEl.getContext(options.type);
+    // @ts-ignore
+    const canvas:
+      | WebGLRenderingContext
+      | WebGL2RenderingContext = canvasEl.getContext(options.type);
     mountEl.appendChild(canvasEl);
   }
 }
