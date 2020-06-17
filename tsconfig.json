@@ -3,7 +3,8 @@
     "declaration": true,
     "noImplicitAny": true,
     "rootDir": "src",
-    "target": "es2018"
+    "target": "es2018",
+    "moduleResolution": "node"
   },
   "exclude": ["node_modules", "lib", "__test__"]
 }
