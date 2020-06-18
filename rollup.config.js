@@ -29,4 +29,17 @@ export default [
     ],
     plugins: [typescript()],
   },
+  // generate code file for examples
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        name: 'greymon',
+        dir: 'examples',
+        format: 'es',
+        sourcemap: true,
+      },
+    ],
+    plugins: [typescript()],
+  },
 ];
