@@ -1,4 +1,12 @@
 import { BaseType, Action } from './base';
+
+import Head from './head';
+import Body from './body';
+import Arms from './arms';
+import Feet from './feet';
+import Legs from './legs';
+
+export { Head, Body, Arms, Feet, Legs };
 export interface PerfectType {
   head: BaseType;
   body: BaseType;
