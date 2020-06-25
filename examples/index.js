@@ -1,3 +1,36 @@
+const constructorFactory = (Cls) => (args) => {
+    return new Cls(args);
+};
+
+class Base {
+    constructor({ descriptor, actions }) {
+        this.descriptor = null;
+        this.actions = [];
+        this.descriptor = descriptor;
+        this.actions = actions.map((action) => action.bind(this));
+    }
+}
+
+class Head extends Base {
+}
+var head = constructorFactory(Head);
+
+class Body extends Base {
+}
+var body = constructorFactory(Body);
+
+class Arms extends Base {
+}
+var arms = constructorFactory(Arms);
+
+class Feet extends Base {
+}
+var feet = constructorFactory(Feet);
+
+class Legs extends Base {
+}
+var legs = constructorFactory(Legs);
+
 class Perfect {
     constructor(perfect) {
         this.assembly = null;
@@ -46,4 +79,5 @@ const greymon = {
 };
 
 export default greymon;
+export { arms as Arms, body as Body, feet as Feet, head as Head, legs as Legs };
 //# sourceMappingURL=index.js.map

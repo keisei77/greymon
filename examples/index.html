@@ -9,8 +9,58 @@
 
 <body>
   <script type="module">
-    import greymon from './index.js';
+    import greymon, { Head, Body, Arms, Legs, Feet } from './index.js';
     console.log(greymon);
+
+    const { Perfect } = greymon;
+
+
+    const combination = {
+      head: Head({
+        descriptor: '',
+        actions: [
+          function nod() {
+            console.log('nod');
+          },
+          function shake() {
+            console.log('shake');
+          },
+        ],
+      }),
+      body: Body({
+        descriptor: '',
+        actions: [],
+      }),
+      arms: Arms({
+        descriptor: '',
+        actions: [
+          function wave() {
+            console.log('wave');
+          },
+          function raise() {
+            console.log('raise');
+          },
+        ],
+      }),
+      legs: Legs({
+        descriptor: '',
+        actions: [
+          function jump() {
+            console.log('jump');
+          },
+          function run() {
+            console.log('run');
+          },
+        ],
+      }),
+      feet: Feet({
+        descriptor: '',
+        actions: [],
+      }),
+    };
+
+    const p = new Perfect(combination);
+    console.log(p);
   </script>
 </body>
 
