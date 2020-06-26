@@ -7,7 +7,7 @@
     "dev": "rimraf dist && rollup -c -w",
     "clean": "rimraf node_modules/.cache/*",
     "test": "yarn run clean && jest",
-    "example": "npx http-server examples",
+    "example:vanilla": "npx http-server examples -o /vanilla",
     "pretest": "yarn run build"
   },
   "main": "dist/greymon.cjs.js",

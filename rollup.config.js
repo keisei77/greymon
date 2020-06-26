@@ -35,7 +35,7 @@ export default [
     output: [
       {
         name: 'greymon',
-        dir: 'examples',
+        dir: 'examples/build',
         format: 'es',
         sourcemap: true,
       },
