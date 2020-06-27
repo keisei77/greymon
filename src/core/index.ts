@@ -22,7 +22,7 @@ interface RegisteredActions {
 }
 
 export default class Perfect {
-  private assembly: any = null;
+  private assembly: PerfectType = null;
   private registeredActions: RegisteredActions = null;
   constructor(perfect: PerfectType) {
     this.assembly = perfect;
@@ -68,7 +68,23 @@ export default class Perfect {
     return this;
   };
 
+  /**
+   *
+   *
+   * @memberof Perfect
+   */
   getActions = () => {
     return this.registeredActions;
+  };
+
+  /**
+   *
+   *
+   * @memberof Perfect
+   */
+  getDescriptors = () => {
+    return Object.entries(this.assembly).map(([part, { descriptor }]) => ({
+      [part]: descriptor,
+    }));
   };
 }

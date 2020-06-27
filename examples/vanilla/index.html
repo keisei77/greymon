@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <div id="app"></div>
   <script type="module">
     import greymon, { Head, Body, Arms, Legs, Feet } from '../build/index.js';
     console.log(greymon);
@@ -17,7 +18,7 @@
 
     const combination = {
       head: Head({
-        descriptor: '',
+        descriptor: '<div>head</div>',
         actions: [
           function nod() {
             console.log('nod');
@@ -28,11 +29,11 @@
         ],
       }),
       body: Body({
-        descriptor: '',
+        descriptor: '<div>body</div>',
         actions: [],
       }),
       arms: Arms({
-        descriptor: '',
+        descriptor: '<div>arms</div>',
         actions: [
           function wave() {
             console.log('wave');
@@ -43,7 +44,7 @@
         ],
       }),
       legs: Legs({
-        descriptor: '',
+        descriptor: '<div>legs</div>',
         actions: [
           function jump() {
             console.log('jump');
@@ -54,13 +55,15 @@
         ],
       }),
       feet: Feet({
-        descriptor: '',
+        descriptor: '<div>feet</div>',
         actions: [],
       }),
     };
 
     const p = new Perfect(combination);
-    console.log(p);
+    const descriptors = p.getDescriptors().map(part => Object.values(part)[0]);
+
+    document.querySelector('#app').append(descriptors);
   </script>
 </body>
 

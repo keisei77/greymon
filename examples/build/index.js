@@ -66,8 +66,23 @@ class Perfect {
             });
             return this;
         };
+        /**
+         *
+         *
+         * @memberof Perfect
+         */
         this.getActions = () => {
             return this.registeredActions;
+        };
+        /**
+         *
+         *
+         * @memberof Perfect
+         */
+        this.getDescriptors = () => {
+            return Object.entries(this.assembly).map(([part, { descriptor }]) => ({
+                [part]: descriptor,
+            }));
         };
         this.assembly = perfect;
         this.register(this.assembly);

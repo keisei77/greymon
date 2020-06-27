@@ -27,5 +27,18 @@ export default class Perfect {
      * perfect.act(['nod', 'run']);
      */
     act: (actions: string[]) => this;
+    /**
+     *
+     *
+     * @memberof Perfect
+     */
     getActions: () => RegisteredActions;
+    /**
+     *
+     *
+     * @memberof Perfect
+     */
+    getDescriptors: () => {
+        [x: string]: any;
+    }[];
 }
