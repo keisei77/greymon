@@ -61,9 +61,9 @@
     };
 
     const p = new Perfect(combination);
-    const descriptors = p.getDescriptors().map(part => Object.values(part)[0]);
+    const descriptors = p.getDescriptors().map(part => Object.values(part)[0]).join('');
 
-    document.querySelector('#app').append(descriptors);
+    document.querySelector('#app').innerHTML = descriptors;
   </script>
 </body>
 
